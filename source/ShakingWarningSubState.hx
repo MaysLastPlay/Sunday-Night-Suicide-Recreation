@@ -32,6 +32,7 @@ class ShakingWarningSubState extends MusicBeatSubstate
 
     #if android
 		addVirtualPad(NONE, A_B);
+		addPadCamera();
 		#end
                 // VPAD MUST BE IN CREATE YOU'RE *******
                 super.create();
