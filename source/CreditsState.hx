@@ -84,10 +84,6 @@ class CreditsState extends MusicBeatState
 		        ['Sunday Night Suicide Team'],
 			['MayMays4Days',		'maymays4days',		'Coder and Composer',					'https://www.tiktok.com/@maymays4days?lang=en',	'0xFF00FF72'],
 			['SonicBoiForLife',			'sonicboiforlife',		'Asset Provider and Cutscene Animator',				'https://www.tiktok.com/@sonicboiforlife?lang=en',		'0xFFFFD900'],
-                        [''],
-                        ['Sunday Night Suicide Recreation'],
-                        ['MaysLastPlay','MaysLastPlay','Main Coder','https://youtube.com/channel/UCx0LxtFR8ROd9sFAq-UxDfw', 'F73838'],
-		        ['Saw (M.A. Jigsaw)','saw','Second Coder','https://www.youtube.com/channel/UC2Sk7vtPzOvbVzdVTWrribQ', 'F73838'],
 		];
 		
 		for(i in pisspoop){
