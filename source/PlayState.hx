@@ -3032,7 +3032,7 @@ class PlayState extends MusicBeatState
 
 					var winterHorrorlandNext = (Paths.formatToSongPath(SONG.song) == "eggnog");
 
-					var screenShakeWarning = ((Paths.formatToSongPath(SONG.song) == "happy") && startCountdown());
+					var screenShakeWarning = (Paths.formatToSongPath(SONG.song) == "happy" && startCountdown());
 					
 					if (winterHorrorlandNext)
 					{
