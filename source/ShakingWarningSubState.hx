@@ -11,6 +11,7 @@ using StringTools;
 
 class ShakingWarningSubState extends MusicBeatSubstate
 {
+    public static var somethingPressed:Bool = false;
 	public static var warningtext:FlxText;
 	public static var warningtext2:FlxText;
 	override public function create() { // STATE DON'T HAVE FUCKING X AND Y YOU'RE AN IDIOT, THE ONE WHO MADE THIS
@@ -41,6 +42,7 @@ class ShakingWarningSubState extends MusicBeatSubstate
 		if (FlxG.keys.justPressed.CONTROL #if android || _virtualpad.buttonB.justPressed #end)
 		{
       ClientPrefs.shaking = false;
+      somethingPressed = true;
 		  ClientPrefs.saveSettings();
       FlxG.resetState();
 		}
@@ -48,6 +50,7 @@ class ShakingWarningSubState extends MusicBeatSubstate
 		if (FlxG.keys.justPressed.ENTER #if android || _virtualpad.buttonA.justPressed #end)
 		{
      ClientPrefs.shaking = true;
+     somethingPressed = true;
 		 ClientPrefs.saveSettings();
 		 FlxG.resetState();
 		}

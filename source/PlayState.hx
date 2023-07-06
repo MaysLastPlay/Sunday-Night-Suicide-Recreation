@@ -2176,7 +2176,14 @@ class PlayState extends MusicBeatState
 			{
 				Conductor.songPosition += FlxG.elapsed * 1000;
 				if (Conductor.songPosition >= 0)
+				if(SONG.song.toLowerCase() == "happy") {
+					openSubState(new ShakingWarningSubState());
+					if(ShakingWarningSubState.somethingPressed) {
+						startSong();
+					}
+				} else {
 					startSong();
+				}
 			}
 		}
 		else
@@ -3031,8 +3038,6 @@ class PlayState extends MusicBeatState
 					trace(Paths.formatToSongPath(PlayState.storyPlaylist[0]) + difficulty);
 
 					var winterHorrorlandNext = (Paths.formatToSongPath(SONG.song) == "eggnog");
-
-					var screenShakeWarning = (Paths.formatToSongPath(SONG.song) == "happy" && startedCountdown);
 					
 					if (winterHorrorlandNext)
 					{
@@ -3060,12 +3065,8 @@ class PlayState extends MusicBeatState
 							LoadingState.loadAndSwitchState(new PlayState());
 						});
 					} 
-					if(screenShakeWarning) {
-						openSubState(new ShakingWarningSubState());
-					} else {
 						cancelMusicFadeTween();
 						LoadingState.loadAndSwitchState(new PlayState());
-					}
 				}
 			}
 			else
