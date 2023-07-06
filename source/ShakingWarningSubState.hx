@@ -42,13 +42,13 @@ class ShakingWarningSubState extends MusicBeatSubstate
 		{
 			ClientPrefs.shaking = false;
                         FlxG.save.data.ClientPrefs.shaking = false;
-			();
+			FlxG.resetState();
 		}
 
 		if (FlxG.keys.justPressed.ENTER #if android || _virtualpad.buttonA.justPressed #end)
 		{
                         FlxG.save.data.ClientPrefs.shaking = true;
-			close();
+			FlxG.resetState();
 		}
 
 		super.update(elapsed);
