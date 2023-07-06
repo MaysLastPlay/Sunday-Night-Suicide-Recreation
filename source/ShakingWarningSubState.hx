@@ -16,12 +16,9 @@ class ShakingWarningSubState extends MusicBeatSubstate
 	override public function create() { // STATE DON'T HAVE FUCKING X AND Y YOU'RE AN IDIOT, THE ONE WHO MADE THIS
 		warningtext = new FlxText(0 + 300, 0 + 300, 0, "", 32);
 		warningtext2 = new FlxText(0 + 130, 0 + 350, 0, "Press A to Procceed, Press B to turn shaking off", 32);
-		if(PlayState.isStoryMode && ClientPrefs.shaking) {
+		if(PlayState.isStoryMode) {
 			warningtext.text = "This song and the next one contain shaking, procced?";
 			warningtext.x -= 131; //60 + 71 == 131
-		}
-		else if(!PlayState.isStoryMode && ClientPrefs.shaking) {
-			warningtext.text = "This song contains Shaking!, procced?";
 		}
 		warningtext.scrollFactor.set();
 		warningtext.setFormat(Paths.font('vcr.ttf'), 32, FlxColor.RED);
@@ -31,7 +28,8 @@ class ShakingWarningSubState extends MusicBeatSubstate
 		warningtext2.updateHitbox();
 		add(warningtext);
 		add(warningtext2);
-                #if android
+
+    #if android
 		addVirtualPad(NONE, A_B);
 		#end
                 // VPAD MUST BE IN CREATE YOU'RE *******
@@ -44,7 +42,7 @@ class ShakingWarningSubState extends MusicBeatSubstate
 		{
 			ClientPrefs.shaking = false;
                         FlxG.save.data.ClientPrefs.shaking = false;
-			close();
+			();
 		}
 
 		if (FlxG.keys.justPressed.ENTER #if android || _virtualpad.buttonA.justPressed #end)
