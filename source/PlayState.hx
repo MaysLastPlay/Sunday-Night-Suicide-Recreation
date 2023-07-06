@@ -2176,7 +2176,7 @@ class PlayState extends MusicBeatState
 			{
 				Conductor.songPosition += FlxG.elapsed * 1000;
 				if (Conductor.songPosition >= 0)
-				if(SONG.song.toLowerCase() == "happy") {
+				if(SONG.song.toLowerCase() == "happy" && isStoryMode) {
 				  paused = true;
 				  androidc.visible = false;
 					openSubState(new ShakingWarningSubState());
